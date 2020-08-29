@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+.gameContainer {
+    background-image: url(./gamebg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    text-shadow: 2px 2px blueviolet;
+    font-size: 4rem;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 5s steps(30, end), blink-caret .5s step-end;
+}
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+}
+.gameOver {
+    text-align: center;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: wheat;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.message {
+    position: relative;
+    top: 30vh;
+    font-size: 5rem;
+}
+
+.gameOver button {
+    background-color: white;
+    border: 3px solid black;
+    cursor: pointer;
+    position: relative;
+    top: 35vh;
+    font-size: 3rem;
+}
+
+button:hover {
+    background-color: gray;
+    color: whitesmoke;
+    border-color: whitesmoke;
+}
+
+.scoreCount {
+    color: wheat;
+    font-size: 2rem;
+    left: 83vw;
+    top: 30px;
+    font-weight: bold;
+    position: absolute;
+    border: 2px solid black;
+    padding: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 10px;
+}
+
+.character {
+    background-image: url(char.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 194px;
+    height: 260px;
+    position: absolute;
+    bottom: 0;
+    left: 52px;
+}
+
+.transform {
+    transform: scaleX(-1);
+}
+
+.obstacle {
+    background-image: url(dino.png);
+    background-size: cover;
+    transform: scaleX(-1);
+    width: 300px;
+    height: 150px;
+    right: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 44vw;
+}
+
+.obstacleAni {
+    animation: obstacleAni 5s linear infinite;
+}
+
+.animateChar {
+    animation: character 0.6s linear
+}
+
+@keyframes character {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 400px;
+        /* left: 20px; */
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes obstacleAni {
+    0% {
+        left: 100vw;
+    }
+    100% {
+        left: -10vw;
+    }
+}
