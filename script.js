@@ -66,7 +66,7 @@ setInterval(() => {
     offsetX = Math.abs(cx - ox);
     offsetY = Math.abs(cy - oy);
 
-//     console.log(offsetX, offsetY)
+    // console.log(offsetX, offsetY)
 
     // when charcacter hit obstacle 
     if (offsetX < 90 && offsetY < 115) {
@@ -78,7 +78,7 @@ setInterval(() => {
     }
 
     // when character cross obstacle then update score 
-    else if (offsetX < 150 && cross) {
+    else if (offsetX < 130 && cross) {
         score += 1;
         updatescore(score);
         cross = false;
@@ -106,7 +106,13 @@ setInterval(() => {
 
 //  restart relod the page 
 function reloadPage() {
-    location.reload(true);
+    // location.reload(true);
+    gameOver.style.visibility = 'hidden';
+    console.log(" New game")
+    obstacle.classList.add('obstacleAni')
+    sound.play();
+    score = 0;
+    updatescore(score);
 }
 
 //  updating score when character cross the obstacle 
