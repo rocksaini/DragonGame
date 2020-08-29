@@ -66,7 +66,7 @@ setInterval(() => {
     offsetX = Math.abs(cx - ox);
     offsetY = Math.abs(cy - oy);
 
-    console.log(offsetX, offsetY)
+//     console.log(offsetX, offsetY)
 
     // when charcacter hit obstacle 
     if (offsetX < 90 && offsetY < 115) {
