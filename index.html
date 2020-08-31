@@ -10,17 +10,32 @@
 </head>
 
 <body>
+
     <div class="gameContainer ">
-        <div align = "center">
-            <h1 >Welcome to My Games</h1>
+
+        <div align="center">
+            <h1 class="heading ">Welcome to My Games</h1>
+        </div>
+        <div id="help">
+            <div class="instruction">
+                <h3>Instructions </h3>
+                <ul class="list">
+                    <li>For Jump Press <b>SPACE BAR /UP ARROW</b> </li>
+                    <li>Move left Press <b>LEFT ARROW KEY</b> </li>
+                    <li>Move Right Press <B>Right ARROW KEY</B></li>
+                </ul>
+                <button onclick="startGame()">Start Game</button>
+            </div>
+
         </div>
         <div class="gameOver ">
             <div class="message">Game Over</div>
             <button id="restartButton " onclick="reloadPage()" align="center"> Restart </button>
         </div>
-        <div class="character male"></div>
+
+        <div class="character "></div>
         <div class="scoreCount">Your score : 0</div>
-        <div class="obstacle obstacleAni"></div>
+        <div class="obstacle "></div>
     </div>
 </body>
 
