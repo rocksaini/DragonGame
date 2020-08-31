@@ -5,6 +5,7 @@
 
 body {
     overflow: hidden;
+    position: relative;
 }
 
 .gameContainer {
@@ -15,6 +16,10 @@ body {
     height: 100vh;
 }
 
+.headAni {
+    animation: typing 5s steps(30, end), blink-caret .5s step-end;
+}
+
 h1 {
     text-align: center;
     padding: 20px;
@@ -22,8 +27,8 @@ h1 {
     font-size: 4rem;
     overflow: hidden;
     white-space: nowrap;
-    animation: typing 5s steps(30, end), blink-caret .5s step-end;
 }
+
 @keyframes typing {
     from {
         width: 0
@@ -32,9 +37,44 @@ h1 {
         width: 100%
     }
 }
-.gameOver {
+
+.instruction {
+    position: relative;
+    text-align: initial;
+    top: 10vw;
+    left: 35vw;
+    font-size: 2rem;
+}
+
+h3 {
+    position: inherit;
+    text-shadow: 2px 2px rgba(142, 100, 190, 0.993);
+    left: 10vw;
+}
+
+.instruction button {
+    background-color: white;
+    border: 3px solid black;
+    cursor: pointer;
+    position: relative;
+    font-size: 2rem;
+    left: 130px;
+    margin: 20px;
+    padding: 3px;
+}
+
+ul {
+    margin: 10px;
+    font-size: 2rem;
+}
+
+li {
+    margin: 2px;
+    padding: 2px;
+}
+
+.gameOver, #help {
     text-align: center;
-    visibility: hidden;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -43,6 +83,10 @@ h1 {
     background-color: rgba(0, 0, 0, 0.9);
     color: wheat;
     font-family: 'Ubuntu', sans-serif;
+}
+
+.gameOver {
+    visibility: hidden;
 }
 
 .message {
@@ -58,6 +102,7 @@ h1 {
     position: relative;
     top: 35vh;
     font-size: 3rem;
+    padding: 3px;
 }
 
 button:hover {
