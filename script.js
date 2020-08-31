@@ -2,11 +2,12 @@ console.log("Welcome to Game ")
 score = 0;
 cross = true;
 
+heading = document.getElementsByClassName('heading')
 sound = new Audio("gameMusic.mp3")
 
-    setTimeout(() => {
-        sound.play()
-    }, 1000);
+setTimeout(() => {
+    sound.play()
+}, 1000);
 
 // function for various key 
 document.onkeydown = function (e) {
@@ -37,7 +38,6 @@ document.onkeydown = function (e) {
         character.style.left = cx + 110 + "px"
         character.classList.remove('transform')
 
-
     }
 
     // for left key 
@@ -46,9 +46,7 @@ document.onkeydown = function (e) {
         cx = parseInt(window.getComputedStyle(character, null).getPropertyValue('left'));
         character.style.left = (cx - 110) + "px"
         character.classList.add('transform')
-
     }
-
 }
 
 // for determine whether character cross the obstacle or not 
@@ -56,6 +54,7 @@ setInterval(() => {
     character = document.querySelector(".character");
     gameOver = document.querySelector('.gameOver');
     obstacle = document.querySelector(".obstacle");
+    head = document.querySelector(".heading");
 
     cx = parseInt(window.getComputedStyle(character, null).getPropertyValue('left'));
     cy = parseInt(window.getComputedStyle(character, null).getPropertyValue('top'));
@@ -73,9 +72,9 @@ setInterval(() => {
         gameOver.style.visibility = 'visible';
         console.log("game over")
         obstacle.classList.remove('obstacleAni')
+        head.classList.remove('headAni')
         sound.pause();
-
-    }
+  }
 
     // when character cross obstacle then update score 
     else if (offsetX < 130 && cross) {
@@ -85,7 +84,6 @@ setInterval(() => {
         setTimeout(() => {
             cross = true
         }, 1000);
-
 
         // change aniamtion time 
 
@@ -106,10 +104,10 @@ setInterval(() => {
 
 //  restart relod the page 
 function reloadPage() {
-    // location.reload(true);
     gameOver.style.visibility = 'hidden';
     console.log(" New game")
     obstacle.classList.add('obstacleAni')
+    head.classList.add('headAni')
     sound.play();
     score = 0;
     updatescore(score);
@@ -120,3 +118,18 @@ function updatescore(score) {
     scoreCount = document.querySelector('.scoreCount')
     scoreCount.innerHTML = "Your score : " + score
 }
+
+// function for start game 
+function startGame() {
+    var x = document.getElementById("help");
+    if (x.style.display == "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+    console.log(" New game")
+    obstacle.classList.add('obstacleAni')
+    head.classList.add('headAni')
+    sound.play();
+}
+
