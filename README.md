@@ -9,7 +9,7 @@ you can play this game at [play Now](https://rocksaini.github.io/DragonGame/)
 
 
 # rocksaini.github.io
-<h1 align="center">Hi 👋, I'm Deepak</h1>
+
 <h3 align="center">A passionate frontend developer from India</h3>
 
 - 👨‍💻 All of my projects are available at [https://rocksaini.github.io/](https://rocksaini.github.io/)
